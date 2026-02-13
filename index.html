@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Mario Prototype</title>
+    <style>
+        :root {
+            --mario-red: #E52521;
+            --mario-blue: #049CD8;
+            --mario-yellow: #FBD000;
+            --mario-green: #43B047;
+            --bg-sky: #6b8cff;
+            --ground-brown: #5c3a1e;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-sky);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--mario-red);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 0 #b31e1b;
+            border-bottom: 4px solid #333;
+        }
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+            text-shadow: 3px 3px 0 #333;
+            letter-spacing: 1px;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 8px 0 rgba(0,0,0,0.2);
+            border: 4px solid #333;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--mario-green);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: transform 0.1s;
+            border: 2px solid #2e8b32;
+            box-shadow: 0 4px 0 #2e8b32;
+            margin-top: 1rem;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 #2e8b32;
+            background-color: #4ecf53;
+        }
+        .btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #2e8b32;
+        }
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        h2 {
+            color: var(--mario-blue);
+            border-bottom: 4px solid var(--mario-yellow);
+            padding-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        .controls-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .key-card {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 4px;
+            border-left: 6px solid var(--mario-yellow);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .key {
+            font-weight: bold;
+            color: var(--mario-red);
+            font-family: monospace;
+            font-size: 1.2em;
+            margin-bottom: 0.2rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--ground-brown);
+            color: white;
+            margin-top: 2rem;
+            border-top: 4px solid #333;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Mini Mario Prototype</h1>
+    <div class="subtitle">A LÖVE 2D Platformer Adventure</div>
+</header>
+
+<div class="container">
+    <div class="section" style="text-align: center;">
+        <p style="font-size: 1.2rem;">Jump, run, and explore in this custom-built platformer engine. Featuring classic mechanics, power-ups, and a boss battle!</p>
+        <a href="#" class="btn" onclick="alert('To play: Install LÖVE and run the game folder!')">Download Game</a>
+        <p><small>Requires <a href="https://love2d.org" target="_blank">LÖVE framework</a> to run.</small></p>
+    </div>
+
+    <div class="section">
+        <h2>Features</h2>
+        <ul>
+            <li><strong>Classic Platforming:</strong> Precise physics with variable jump height and momentum.</li>
+            <li><strong>Power-ups:</strong> Collect Red Mushrooms for speed and Green Mushrooms to grow in size.</li>
+            <li><strong>Enemies:</strong> Stomp on Goombas, avoid Piranha Plants, and defeat the Boss.</li>
+            <li><strong>Dynamic Levels:</strong> Explore overworld platforms and delve into underground pipe levels with lava.</li>
+            <li><strong>Combat:</strong> Find the hidden gun block to take down enemies from a distance.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Controls</h2>
+        <div class="controls-grid">
+            <div class="key-card">
+                <div class="key">← / → or A / D</div>
+                <div>Move Left / Right</div>
+            </div>
+            <div class="key-card">
+                <div class="key">Z or Space</div>
+                <div>Jump</div>
+            </div>
+            <div class="key-card">
+                <div class="key">X or Shift</div>
+                <div>Run / Sprint</div>
+            </div>
+            <div class="key-card">
+                <div class="key">R</div>
+                <div>Restart Level</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>How to Run</h2>
+        <ol>
+            <li>Install <strong>LÖVE</strong> (love2d.org) for your operating system.</li>
+            <li>Download the source code or the <code>.love</code> file.</li>
+            <li>Drag the folder onto the LÖVE application, or run <code>love .</code> in your terminal.</li>
+        </ol>
+    </div>
+</div>
+
+<footer>
+    <p>Created with Lua & LÖVE &bull; Mini Mario Prototype</p>
+</footer>
+
+</body>
+</html>
